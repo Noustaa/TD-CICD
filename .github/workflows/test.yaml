@@ -35,3 +35,12 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/testci:latest
+  second-job:
+    name: Second job self hosted
+    needs: super-lint
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    - name: Docker run
+      run: |
+        docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/testci:latest
