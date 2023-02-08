@@ -46,14 +46,14 @@ declare -a StringArray=("1" \
 )
 
 # Iterate the string array using for loop
-firstquestion=$(($RANDOM % 42))
+firstquestion=$((RANDOM % 42))
 
 echo "The firstquestion is ${StringArray[$firstquestion]}"
 
 secondquestion=$firstquestion
 
 while [ "$secondquestion" = "$firstquestion" ]; do
-  secondquestion=$(($RANDOM % 42))
+  secondquestion=$((RANDOM % 42))
 done
 
 echo "The secondquestion is ${StringArray[$secondquestion]}"
@@ -61,7 +61,7 @@ echo "The secondquestion is ${StringArray[$secondquestion]}"
 thirdquestion=$firstquestion
 
 while [ "$thirdquestion" = "$firstquestion" ] || [ "$thirdquestion" = "$secondquestion" ]; do
-  thirdquestion=$(($RANDOM % 42))
+  thirdquestion=$((RANDOM % 42))
 done
 
 echo "The thridquestion is ${StringArray[$thirdquestion]}"
