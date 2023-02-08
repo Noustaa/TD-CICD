@@ -35,3 +35,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/testci:latest
+  second-job:
+    needs: super-lint
+    runs-on: self-hosted
