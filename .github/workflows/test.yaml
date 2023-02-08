@@ -36,5 +36,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/testci:latest
   second-job:
+    name: Second job self hosted
     needs: super-lint
     runs-on: self-hosted
